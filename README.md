@@ -1,6 +1,6 @@
 # Data Analyzer
 
-A powerful Python package for processing and analyzing CSV data files with a rich command-line interface. This tool is designed to process various data sources and generate comprehensive analysis reports.
+This repo is for a Trial Assesment for Data Analyst position at Clever. This is a Python package for processing and analyzing CSV data files with a rich command-line interface. This tool is designed to process various data sources and generate comprehensive analysis reports.
 
 ## Features
 
@@ -8,8 +8,6 @@ A powerful Python package for processing and analyzing CSV data files with a ric
 - **TSV Support**: Built-in support for processing TSV (Tab-Separated Values) files
 - **Rich CLI Interface**: Modern command-line interface built with Click
 - **Data Analysis**: Comprehensive data processing and analysis capabilities
-- **Visualization Support**: Built-in support for data visualization
-- **Progress Tracking**: Real-time progress updates during processing
 - **Error Handling**: Robust error handling and logging
 
 ## Data Notes
@@ -77,17 +75,28 @@ data-analyzer --help
 ```
 clever-assesment/
 ├── data_analyzer/              # Main package code
-│   ├── __init__.py            # Package initialization
-│   ├── cli.py                 # Command-line interface
-│   ├── data_processor.py      # Core data processing logic
-│   ├── logger.py              # Logging utilities
-│   └── utils.py               # Utility functions
-├── data/                      # Data directories
-│   ├── input/                 # Input CSV files
-│   └── output/                # Output files
-├── setup.py                   # Package setup configuration
-└── pyproject.toml             # Project metadata and dependencies
+│   ├── __init__.py             # Package initialization
+│   ├── cli.py                  # Command-line interface
+│   ├── data_processor.py       # Core data processing logic
+│   ├── time_series_analyzer.py # time series processing logic
+│   ├── logger.py               # Logging utilities
+│   └── utils.py                # Utility functions
+├── data/                       # Data directories
+│   ├── input/                  # Input CSV files
+│   └── output/                 # Output files
+├── setup.py                    # Package setup configuration
+└── pyproject.toml              # Project metadata and dependencies
 ```
+
+## Visualizations and Extended Analysis
+
+As an extra step in the analysis, I created a timeseries analysis from the data provided by redfin. My analysis show cases the YoY and MoM analysis over the whole dataset, also a visualization of the timeseries analysis. For more information about the timeseries analysis please take a look at the [time series README](data/output/time_series/README.md).
+
+### Median Sale Price Trends
+![Median Sale Price Trends](data/output/time_series/median_sale_price_trends.png)
+
+### Price and Growth Summary
+![Price and Growth Summary](data/output/time_series/price_and_growth_summary.png)
 
 ## Code Documentation
 
