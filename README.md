@@ -2,6 +2,8 @@
 
 This repo is for a Trial Assesment for Data Analyst position at Clever. This is a Python package for processing and analyzing CSV data files with a rich command-line interface. This tool is designed to process various data sources and generate comprehensive analysis reports.
 
+The main output file that matches the output sheet in the provided Google Sheet can be found at `output/output.csv`.
+
 ## Features
 
 - **CSV Processing**: Efficient processing of multiple CSV files using pandas
@@ -169,6 +171,6 @@ The package expects CSV and TSV files in the input directory with specific forma
 
 ### Output Data
 The processed data is saved in the output directory with:
-- Combined analysis results
+- Combined analysis results in `output/output.csv` (matching the output sheet in the provided Google Sheet)
 - Generated visualizations
 - Processing logs
