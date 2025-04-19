@@ -32,7 +32,7 @@ These values are maintained in the `process_median_sale_price_data` function in 
 
 1. **Clone the Repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/marwaneltoukhy/clever-assesment.git
 cd data-analyzer
 ```
 
@@ -120,26 +120,26 @@ The data processor module handles the core data processing logic:
 Key functions:
 
 #### Core Processing Functions
-- `process_csv_files(input_dir: Path, output_dir: Path) -> pd.DataFrame`: Main processing function that orchestrates the entire data processing pipeline
-- `read_csv_file(file_path: Path) -> pd.DataFrame`: Reads CSV or TSV files into pandas DataFrames
-- `combine_data(data, column_name, combined_df) -> pd.DataFrame`: Combines data from Series or DataFrame into an existing DataFrame
+- `process_csv_files`: Main processing function that orchestrates the entire data processing pipeline
+- `read_csv_file`: Reads CSV or TSV files into pandas DataFrames
+- `combine_data`: Combines data from Series or DataFrame into an existing DataFrame
 
 #### Data Processing Functions
-- `process_keys_data(df: pd.DataFrame) -> pd.Series`: Processes region key data
-- `process_census_population_data(df: pd.DataFrame, keys_df: pd.DataFrame, combined_df: pd.DataFrame) -> pd.DataFrame`: Processes census population data
-- `process_median_household_income_data(df: pd.DataFrame, keys_df: pd.DataFrame, combined_df: pd.DataFrame) -> pd.DataFrame`: Processes median household income data
-- `process_median_sale_price_data(df: pd.DataFrame, keys_df: pd.DataFrame, combined_df: pd.DataFrame) -> tuple[pd.Series, str]`: Processes median sale price data with hard-coded values for DC and Puerto Rico
-- `process_rank_data(combined_df: pd.DataFrame, column_name: str, ascending: bool = False) -> pd.Series`: Ranks states by a given column
+- `process_keys_data`: Processes region key data
+- `process_census_population_data`: Processes census population data
+- `process_median_household_income_data`: Processes median household income data
+- `process_median_sale_price_data`: Processes median sale price data with hard-coded values for DC and Puerto Rico
+- `process_rank_data`: Ranks states by a given column
 
 #### Blurb Generation Functions
-- `process_blurb_population_data(keys_df: pd.DataFrame, combined_df: pd.DataFrame) -> pd.Series`: Generates population blurbs
-- `process_blurb_median_household_income_data(keys_df: pd.DataFrame, combined_df: pd.DataFrame) -> pd.Series`: Generates median household income blurbs
-- `process_blurb_median_sale_price_data(keys_df: pd.DataFrame, combined_df: pd.DataFrame, data_date: str) -> pd.Series`: Generates median sale price blurbs
-- `process_blurb_house_affordability_ratio_data(keys_df: pd.DataFrame, combined_df: pd.DataFrame, data_date: str) -> pd.Series`: Generates house affordability ratio blurbs
+- `process_blurb_population_data`: Generates population blurbs
+- `process_blurb_median_household_income_data`: Generates median household income blurbs
+- `process_blurb_median_sale_price_data`: Generates median sale price blurbs
+- `process_blurb_house_affordability_ratio_data`: Generates house affordability ratio blurbs
 
 #### Utility Functions
-- `find_key_row(keys_df: pd.DataFrame, key: str, column: str) -> str`: Finds matching key row values
-- `calculate_house_affordability_ratio(combined_df: pd.DataFrame) -> pd.Series`: Calculates house affordability ratios
+- `find_key_row`: Finds matching key row values
+- `calculate_house_affordability_ratio`: Calculates house affordability ratios
 
 ### Logger Module (`logger.py`)
 
