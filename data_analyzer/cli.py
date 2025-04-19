@@ -8,6 +8,7 @@ import pandas as pd
 
 from rich.table import Table
 from data_analyzer.data_processor import process_csv_files
+from data_analyzer.time_series_analyzer import analyze_time_series
 from data_analyzer.logger import (
     print_header,
     print_success,
@@ -37,7 +38,7 @@ def display_results(processed_df: pd.DataFrame) -> None:
 
 @click.group()
 def cli():
-    """Data Analyzer - A tool for processing and analyzing CSV files."""
+    """Data Analyzer CLI."""
     pass
 
 
@@ -71,7 +72,34 @@ def process(input_dir: Path, output_dir: Path) -> None:
         print_error(f"Error during processing: {str(e)}")
 
 
+@cli.command()
+@click.option(
+    "--input-dir",
+    type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=Path),
+    default="data/input",
+    help="Directory containing input CSV files (default: data/input)",
+)
+@click.option(
+    "--output-dir",
+    type=click.Path(file_okay=False, dir_okay=True, path_type=Path),
+    default="data/output/time_series",
+    help="Directory to save time series analysis results (default: data/output/time_series)",
+)
+def analyze_timeseries(input_dir: Path, output_dir: Path) -> None:
+    """Perform time series analysis on Redfin median sale price data."""
+    print_header("Time Series Analysis")
+    print_info(f"Input directory: {input_dir}")
+    print_info(f"Output directory: {output_dir}")
+
+    try:
+        analyze_time_series(input_dir, output_dir)
+        print_success("Time series analysis completed successfully!")
+    except Exception as e:
+        print_error(f"Error during time series analysis: {str(e)}")
+
+
 def main():
+    """Entry point for the CLI."""
     cli()
 
 
